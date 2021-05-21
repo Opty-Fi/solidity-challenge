@@ -14,8 +14,8 @@
 
 - Fill in the Challenge contract's functions so that the unit tests pass in tests/Challenge.spec.ts
 
-  i. Please be overly explicit with your code comments
-  ii. Since the unit tests are written according to the incomplete contract, please do not rename functions or variables
+  1. Please be overly explicit with your code comments
+  2. Since the unit tests are written according to the incomplete contract, please do not rename functions or variables
 
 ### UniswapV3PairLiquidity Contract
 
