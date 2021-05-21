@@ -1,24 +1,28 @@
-import { Contract } from "ethers";
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-// When running the script with `hardhat run <script>` you'll find the Hardhat
-// Runtime Environment's members available in the global scope.
+import "dotenv/config";
 import { ethers } from "hardhat";
+import { Signer } from "ethers";
+import { getWallet } from "../utils/helpers";
 
-import { Greeter__factory } from "../typechain";
+const contractName = "";
+const constructorParams: any[] = [];
+const wallet = getWallet(process.env.NETWORK as string)(false)(
+  process.env.DEV_PRIVATE_KEY as string
+);
 
-async function main(): Promise<void> {
-  const Greeter: Greeter__factory = await ethers.getContractFactory("Greeter");
-  const greeter: Contract = await Greeter.deploy("Hello, Buidler!");
-  await greeter.deployed();
-
-  console.log("Greeter deployed to: ", greeter.address);
+async function main(
+  contractName: string,
+  constructorParams?: any[],
+  signer?: Signer
+): Promise<void> {
+  const factory = await ethers.getContractFactory(contractName, signer);
+  const contract = await factory.deploy(...constructorParams!);
+  await contract.deployed();
+  console.log("Contract deployed to:", contract.address);
 }
 
-// We recommend this pattern to be able to use async/await everywhere and properly handle errors.
-main()
+main(contractName, constructorParams, wallet)
   .then(() => process.exit(0))
-  .catch((error: Error) => {
-    console.error(error);
+  .catch((err) => {
+    console.error(err);
     process.exit(1);
   });

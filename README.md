@@ -1,20 +1,42 @@
-# Solidity Template
+# Solidity-Challenge
 
-My favourite setup for writing Solidity smart contracts.
+## INSTRUCTIONS:
 
-- [Hardhat](https://github.com/nomiclabs/hardhat): compile and run the smart contracts on a local development network
-- [TypeChain](https://github.com/ethereum-ts/TypeChain): generate TypeScript types for smart contracts
-- [Ethers](https://github.com/ethers-io/ethers.js/): renowned Ethereum library and wallet implementation
-- [Waffle](https://github.com/EthWorks/Waffle): tooling for writing comprehensive smart contract tests
-- [Solhint](https://github.com/protofire/solhint): linter
-- [Solcover](https://github.com/sc-forks/solidity-coverage): code coverage
-- [Prettier Plugin Solidity](https://github.com/prettier-solidity/prettier-plugin-solidity): code formatter
+### General Instructions
 
-This is a GitHub template, which means you can reuse it as many times as you want. You can do that by clicking the "Use this
-template" button at the top of the page.
+- Click the green "Use this template" button. **Make your solution repo private**, and invite **dhruvinparikh** and **fiqureshi1** to the repo once you're ready to submit. 
 
-## Usage
+- AT THE TOP OF EACH CONTRACT FILE, PLEASE LIST GITHUB LINKS TO ANY AND ALL REPOS YOU BORROW FROM THAT YOU DO NOT EXPLICITLY IMPORT FROM ETC.
+- PLEASE WRITE AS MUCH OR AS LITTLE CODE AS YOU THINK IS NEEDED TO COMPLETE THE TASK
+- LIBRARIES AND UTILITY CONTRACTS (SUCH AS THOSE FROM OPENZEPPELIN) ARE FAIR GAME
 
+### Challenge Contract
+
+- Fill in the Challenge contract's functions so that the unit tests pass in tests/Challenge.spec.ts
+
+  i. Please be overly explicit with your code comments
+  ii. Since the unit tests are written according to the incomplete contract, please do not rename functions or variables
+
+### UniswapV3PairLiquidity Contract
+
+- Build a contract that does the following:
+
+ 1. Implements an ERC20 token
+ 2. Creates its own Uniswap V3 pair with ETH
+ 3. Seeds that Uniswap pair with liquidity
+ 4. The above requirements should be implemented directly in the token contract
+ 5. Include tests, deployment/migration scripts, and documentation.
+ 6. Please feel free to use any code/packages from the following Github Organizations and Docs:
+      1. [Uniswap Org](https://github.com/Uniswap)
+      2. [UniswapV3 Docs](https://docs.uniswap.org/)
+### MockERC1155 Contract
+
+- Debug the contract
+
+  1. Debugging includes incorrect code, anti-patterns, bad formatting, gas considerations etc
+  2. Please comment your code explaining your reasoning for changes/additions
+  3. There are no unit tests associated with the MockERC1155 contract
+  4. In case you're unfamiliar, please read about the [ERC1155 standard here](https://docs.openzeppelin.com/contracts/4.x/erc1155), but please do not spend any time converting the contract into a proper ERC1155 contract
 ### Pre Requisites
 
 Before running any command, make sure to install dependencies:
@@ -31,60 +53,12 @@ Compile the smart contracts with Hardhat:
 $ yarn compile
 ```
 
-### TypeChain
-
-Compile the smart contracts and generate TypeChain artifacts:
-
-```sh
-$ yarn typechain
-```
-
-### Lint Solidity
-
-Lint the Solidity code:
-
-```sh
-$ yarn lint:sol
-```
-
-### Lint TypeScript
-
-Lint the TypeScript code:
-
-```sh
-$ yarn lint:ts
-```
-
-### Test
-
-Run the Mocha tests:
-
-```sh
-$ yarn test
-```
-
 ### Coverage
 
 Generate the code coverage report:
 
 ```sh
 $ yarn coverage
-```
-
-### Report Gas
-
-See the gas usage per unit test and average gas per method call:
-
-```sh
-$ REPORT_GAS=true yarn test
-```
-
-### Clean
-
-Delete the smart contract artifacts, the coverage reports and the Hardhat cache:
-
-```sh
-$ yarn clean
 ```
 
 ### Deploy
@@ -95,23 +69,17 @@ Deploy the contracts to Hardhat Network:
 $ yarn deploy
 ```
 
-Deploy the contracts to a specific network, such as the Ropsten testnet:
+### Test
+
+Run the Mocha tests:
 
 ```sh
-$ yarn deploy:network ropsten
+$ yarn test
 ```
+### TypeChain
 
-## Syntax Highlighting
+Compile the smart contracts and generate TypeChain artifacts:
 
-If you use VSCode, you can enjoy syntax highlighting for your Solidity code via the
-[vscode-solidity](https://github.com/juanfranblanco/vscode-solidity) extension. The recommended approach to set the
-compiler version is to add the following fields to your VSCode user settings:
-
-```json
-{
-  "solidity.compileUsingRemoteVersion": "v0.8.4+commit.c7e474f2",
-  "solidity.defaultCompiler": "remote"
-}
+```sh
+$ yarn typechain
 ```
-
-Where of course `v0.8.4+commit.c7e474f2` can be replaced with any other version.
