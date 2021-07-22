@@ -12,11 +12,25 @@
 
 ### Challenge Contract
 
-- Fill in the Challenge contract's functions so that the unit tests pass in tests/Challenge.spec.ts
+- Fill in the Challenge contract's functions so that the unit tests pass in `tests/Challenge.spec.ts`
 
   1. Please be overly explicit with your code comments
   2. Since the unit tests are written according to the incomplete contract, please do not rename functions or variables
+### FindBugs Contracts
 
+- You are required to comment comment above each lines for errors if any for each contract.
+- Explain the error and how to mitigate that error.
+- Coding of the solution is not required.
+- You are only required to comment on way of fixing error in short paragraph
+
+### MockERC1155 Contract
+
+- Debug the contract
+
+  1. Debugging includes incorrect code, anti-patterns, bad formatting, gas considerations etc
+  2. Please comment your code explaining your reasoning for changes/additions
+  3. There are no unit tests associated with the MockERC1155 contract
+  4. In case you're unfamiliar, please read about the [ERC1155 standard here](https://docs.openzeppelin.com/contracts/4.x/erc1155), but please do not spend any time converting the contract into a proper ERC1155 contract
 ### UniswapV3PairLiquidity Contract
 
 - Build a contract that does the following:
@@ -29,14 +43,6 @@
  6. Please feel free to use any code/packages from the following Github Organizations and Docs:
       1. [Uniswap Org](https://github.com/Uniswap)
       2. [UniswapV3 Docs](https://docs.uniswap.org/)
-### MockERC1155 Contract
-
-- Debug the contract
-
-  1. Debugging includes incorrect code, anti-patterns, bad formatting, gas considerations etc
-  2. Please comment your code explaining your reasoning for changes/additions
-  3. There are no unit tests associated with the MockERC1155 contract
-  4. In case you're unfamiliar, please read about the [ERC1155 standard here](https://docs.openzeppelin.com/contracts/4.x/erc1155), but please do not spend any time converting the contract into a proper ERC1155 contract
 ### Pre Requisites
 
 Before running any command, make sure to install dependencies:

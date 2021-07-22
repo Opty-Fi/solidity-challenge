@@ -54,6 +54,7 @@ contract Challenge {
   function uint256ToAddress(uint256 num) external pure returns (address) {}
 
   /// @dev calculates the CREATE2 address for a pair without making any external calls
+  /// @notice the function must remain pure
   /// @param token0 address of first token in pair
   /// @param token1 address of second token in pair
   /// @return address of pair
